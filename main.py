@@ -68,16 +68,11 @@ def validate():
                 email_error = "That is not a vaild email"
 
     if not username_error and not password_error and not verify_error and not email_error:
-        return redirect("/welcome")
+        return render_template("welcome.html", title="Welcome", 
+        username=username)
     else:
         return render_template("signup.html", title="Signup", 
         username_error=username_error, password_error=password_error,
         verify_error=verify_error, email_error=email_error)
-
-@app.route('/welcome', methods=['POST'])
-def welcome_index():
-    username = request.form["username"]
-
-    return render_template("welcome.html", title="Welcome", username=username)
 
 app.run()
