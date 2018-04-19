@@ -74,11 +74,10 @@ def validate():
         username_error=username_error, password_error=password_error,
         verify_error=verify_error, email_error=email_error)
 
-@app.route("/welcome", methods=["POST"])
+@app.route('/welcome', methods=['POST'])
 def welcome_index():
     username = request.form["username"]
 
-    return render_template("welcome.html", title="Welcome", 
-    username=username)
+    return render_template("welcome.html", title="Welcome", username=username)
 
 app.run()

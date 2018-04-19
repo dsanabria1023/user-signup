@@ -3,7 +3,7 @@
 {% block content %}
         <h1>Signup</h1>
         <style>.error { color: red; }</style>
-        <form method="POST">
+        <form action="/welcome" method="POST">
             <label>Username: 
                 <input name="username" type="text" value='{{request.form["username"]}}'/>
                 <span class="error">{{username_error}}</span>
